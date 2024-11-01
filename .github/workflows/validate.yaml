@@ -1,0 +1,14 @@
+name: Pull Request validation
+
+on: [pull_request]
+
+
+jobs:
+  dah12-contracts-ci:
+    name: Run dah12-contracts validation
+    uses: ./.github/workflows/dah12-contracts-ci.yaml
+
+  dah12-frontend-ci:
+    name: Run dah12-frontend validation
+    uses: ./.github/workflows/dah12-frontend-ci.yaml
+

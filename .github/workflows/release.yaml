@@ -1,0 +1,38 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'docs/**'
+      - '**.md'
+      - '.vscode/**'
+      - '.idea/**'
+
+permissions:
+  contents: read
+  packages: read
+
+jobs:
+  dah12-contracts-validate:
+    name: Run dah12-contracts release
+    secrets: inherit
+    uses: ./.github/workflows/dah12-contracts-ci.yaml
+
+  dah12-contracts-release:
+    name: Run dah12-contracts release
+    secrets: inherit
+    uses: ./.github/workflows/dah12-contracts-cd.yaml
+    needs: dah12-contracts-validate
+
+  dah12-frontend-validate:
+    name: Run dah12-frontend release
+    secrets: inherit
+    uses: ./.github/workflows/dah12-frontend-ci.yaml
+
+  dah12-frontend-release:
+    name: Run dah12-frontend release
+    secrets: inherit
+    uses: ./.github/workflows/dah12-frontend-cd.yaml
+    needs: dah12-frontend-validate
