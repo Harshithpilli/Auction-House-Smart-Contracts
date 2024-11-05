@@ -1,0 +1,62 @@
+{
+  "name": "DecentralizedAuctionHouse",
+  "desc": "",
+  "methods": [
+    {
+      "name": "createAuction",
+      "args": [
+        {
+          "name": "assetId",
+          "type": "uint64"
+        },
+        {
+          "name": "startingPrice",
+          "type": "uint64"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    {
+      "name": "placeBid",
+      "args": [
+        {
+          "name": "bidTxn",
+          "type": "pay"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    {
+      "name": "finalizeAuction",
+      "args": [],
+      "returns": {
+        "type": "void"
+      }
+    },
+    {
+      "name": "cancelAuction",
+      "args": [],
+      "returns": {
+        "type": "void"
+      }
+    },
+    {
+      "name": "deleteApplication",
+      "args": [],
+      "returns": {
+        "type": "void"
+      }
+    },
+    {
+      "name": "createApplication",
+      "args": [],
+      "returns": {
+        "type": "void"
+      }
+    }
+  ]
+}
